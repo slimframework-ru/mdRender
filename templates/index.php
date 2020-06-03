@@ -61,7 +61,7 @@
         <div class="row">
 
             <div class="col-md-3">
-                <?php require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'sidebar.php' ?>
+                <?php require __DIR__ . DIRECTORY_SEPARATOR . 'sidebar.php' ?>
             </div>
 
             <h1><?= $title; ?></h1>
