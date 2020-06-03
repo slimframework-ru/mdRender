@@ -67,12 +67,32 @@ $sidebarFile = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'sidebar' . DIRECTORY_SE
 $sidebar = file_exists($sidebarFile) ? require $sidebarFile : array();
 
 $active = null;
+$prev = null;
+$isPrev = false;
+$next = null;
+$isNext = false;
 foreach ($sidebar as $part => $items) {
-    foreach (array_keys($items) as $item) {
+    foreach ($items as $item => $page) {
         $arr = explode('#', $item);
         $link = $arr[0];
+        if ($active && !$isNext && $current !== $link) {
+            $next = [
+                'link' => $item,
+                'part' => $part,
+                'page' => $page,
+            ];
+            $isNext = true;
+        }
         if ($link === $current) {
             $active = $part;
+            $isPrev = true;
+        }
+        if (!$isPrev) {
+            $prev = [
+                'link' => $item,
+                'part' => $part,
+                'page' => $page,
+            ];
         }
     }
 }

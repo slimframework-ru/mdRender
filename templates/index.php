@@ -8,8 +8,10 @@
  * @var string $content
  * @var string $url
  * @var string $current
- * @var string|null $active
  * @var array $sidebar
+ * @var string|null $active
+ * @var array|null $prev
+ * @var array|null $next
  */
 ?><!DOCTYPE html>
 <html lang="ru">
@@ -121,16 +123,22 @@
 <?php endif;?>
                 <?=$content;?>
 
+<?php if ($prev || $next):?>
                 <nav>
                     <ul class="nav pager">
+<?php if ($prev):?>
                         <li class="previous">
-                            <a href="#" rel="prev"><i class="fa fa-arrow-left"></i> <small>category: </small> page</a>
+                            <a href="<?=$prev['link']?>" rel="prev"><i class="fa fa-arrow-left"></i> <small><?=$prev['part']?>: </small> <?=$prev['page']?></a>
                         </li>
+<?php endif;?>
+<?php if ($next):?>
                         <li class="next">
-                            <a href="#" rel="next"><small>category: </small> page <i class="fa fa-arrow-right"></i></a>
+                            <a href="<?=$next['link']?>" rel="next"><small><?=$next['part']?>: </small> <?=$next['page']?> <i class="fa fa-arrow-right"></i></a>
                         </li>
+<?php endif;?>
                     </ul>
                 </nav>
+<?php endif;?>
             </div>
         </div>
         <footer class="site-footer">
