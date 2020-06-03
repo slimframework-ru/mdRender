@@ -8,6 +8,7 @@
  * @var string $content
  * @var string $url
  * @var string $current
+ * @var string|null $active
  * @var array $sidebar
  */
 ?><!DOCTYPE html>
@@ -102,7 +103,7 @@
                     </div>
 
 <?php foreach ($sidebar as $part => $items):?>
-                    <h3 class="toc-title"><?=$part;?></h3>
+                    <h3 class="toc-title<?php if ($part === $active):?> active<?php endif;?>"><?=$part;?></h3>
                     <ul class="toc-links">
 <?php foreach ($items as $link => $name):?>
                         <li><a href="<?=$link?>"><?=$name?></a></li>
