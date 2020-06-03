@@ -1,6 +1,7 @@
 <?php
 /**
  * @var int $metrika
+ * @var string $website
  * @var string $title
  * @var string $caption
  * @var string $content
@@ -17,7 +18,7 @@
     <meta name="robots" content="index, follow"/>
     <meta property="og:title" content="<?=$title;?>"/>
     <meta property="og:site_name" content="<?=$title;?>"/>
-    <meta property="og:url" content="http://slimframework.ru"/>
+    <meta property="og:url" content="<?=$website;?>"/>
     <meta property="og:description" content="<?=$title;?>"/>
     <meta property="og:type" content="<?=$title;?>"/>
     <link rel="stylesheet" href="/assets/css/all.css"/>

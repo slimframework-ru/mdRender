@@ -4,9 +4,17 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPAR
 
 $config = require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
-$metrika = (int)$config['metrika'];
-$repository = 'https://github.com/slimframework-ru/slim.ru';
+$metrika = 0;
+if (array_key_exists('metrika', $config) && !empty($config['metrika'])) {
+    $metrika = (int)$config['metrika'];
+}
 
+$website = 'http://slimframework.ru';
+if (array_key_exists('website', $config) && !empty($config['website'])) {
+    $website = (string)$config['website'];
+}
+
+$repository = 'https://github.com/slimframework-ru/slim.ru';
 if (array_key_exists('repository', $config) && !empty($config['repository'])) {
     $repository = (string)$config['repository'];
 }

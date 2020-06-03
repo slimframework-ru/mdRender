@@ -2,5 +2,6 @@
 
 return array(
     'metrika' => null,
-    'mdRepository' => 'https://github.com/slimframework-ru/slim.ru',
+    'repository' => 'https://github.com/slimframework-ru/slim.ru',
+    'website' => 'http://slimframework.ru',
 );
