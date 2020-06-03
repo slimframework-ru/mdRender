@@ -2,5 +2,6 @@
 .idea
 vendor
 config/config.php
+public/assets/images/md
 md/*
 !md/.gitkeep
