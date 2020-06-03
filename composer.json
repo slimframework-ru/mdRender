@@ -1,5 +1,10 @@
 {
     "require": {
         "erusev/parsedown": "^1.6"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@php -r \"file_exists('config' . DIRECTORY_SEPARATOR . 'config.php') || copy('config' . DIRECTORY_SEPARATOR . 'config.example.php', 'config' . DIRECTORY_SEPARATOR . 'config.php');\""
+        ]
     }
 }
