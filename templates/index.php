@@ -1,17 +1,25 @@
-<!DOCTYPE html>
+<?php
+/**
+ * @var int $metrika
+ * @var string $title
+ * @var string $caption
+ * @var string $content
+ * @var string $url
+ */
+?><!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title><?= $title; ?> - Русская документация - Slim Framework</title>
-    <meta name="description" content="<?= $title; ?> - Русская документация - Slim Framework"/>
+    <title><?=$title;?></title>
+    <meta name="description" content="<?=$title;?>"/>
     <meta name="robots" content="index, follow"/>
-    <meta property="og:title" content="<?= $title; ?> - Русская документация - Slim Framework"/>
-    <meta property="og:site_name" content="<?= $title; ?> - Русская документация - Slim Framework"/>
+    <meta property="og:title" content="<?=$title;?>"/>
+    <meta property="og:site_name" content="<?=$title;?>"/>
     <meta property="og:url" content="http://slimframework.ru"/>
-    <meta property="og:description" content="<?= $title; ?> - Русская документация - Slim Framework"/>
-    <meta property="og:type" content="<?= $title; ?> - Русская документация - Slim Framework"/>
+    <meta property="og:description" content="<?=$title;?>"/>
+    <meta property="og:type" content="<?=$title;?>"/>
     <link rel="stylesheet" href="/assets/css/all.css"/>
     <link rel="shortcut icon" href="/assets/images/favicon.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -54,7 +62,7 @@
 <div class="wrapper docs">
     <div class="container-fluid">
         <header class="site-header">
-            <div class="site-title"><a href="/index.php">Slim</a></div>
+            <div class="site-title"><a href="/">Slim</a></div>
             <div class="site-slogan">микро framework для PHP</div>
         </header>
 
@@ -64,15 +72,17 @@
                 <?php require __DIR__ . DIRECTORY_SEPARATOR . 'sidebar.php' ?>
             </div>
 
-            <h1><?= $title; ?></h1>
+            <h1><?=$caption;?></h1>
             <hr/>
             <div class="col-md-8 docs-content">
+<?php if($url):?>
                 <div class="edit-panel" style="margin: 0 0 1em 0;">
-                    <a href="https://github.com/bad4iz/slim.ru/blob/master<?= $fileGIt ?>" target="_blank"
+                    <a href="<?=$url;?>" target="_blank"
                        class="btn btn-default btn-xs"><i
                             class="fa fa-github"></i> редактировать страницу </a>
                 </div>
-                <?= $Parsedown->text($page); ?>
+<?php endif;?>
+                <?=$content;?>
             </div>
 
         </div>
