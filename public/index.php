@@ -24,9 +24,22 @@ $path = preg_replace('/(^\/|\.html$)/ui', '', $path);
 if (!$path) {
     $path = 'index';
 }
+
+$version = null;
+preg_match('/^v(?<ver>\d+)($|\/)/ui', $path, $matches);
+if (array_key_exists('ver', $matches)) {
+    $version = (int)$matches['ver'];
+}
+
+if (!$version) {
+    header('Location: /v3/index');
+    die;
+}
+
 $url = $repository . '/blob/master/' . $path . '.md';
 $path = str_replace('/', DIRECTORY_SEPARATOR, $path);
 $file = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'md' . DIRECTORY_SEPARATOR . $path . '.md';
+
 if (file_exists($file)) {
     $parser = new Parsedown();
     $md = file_get_contents($file);
@@ -48,4 +61,4 @@ if ($title) {
 };
 $title .= 'Русская документация Slim Framework';
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'index.php';
+require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'new.php';
