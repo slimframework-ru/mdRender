@@ -63,17 +63,7 @@ if ($title) {
 };
 $title .= 'Русская документация Slim Framework';
 
-$sidebar = [
-    'Get Started' => [
-        '/v3' => 'Home',
-        '/v3/start/installation' => 'Installation',
-    ],
-    'Tutorial' => [
-        '/v3/tutorial/first-app' => 'First Application',
-    ],
-    'The Application' => [
-        '/v3/objects/application' => 'Overview',
-    ],
-];
+$sidebarFile = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'sidebar' . DIRECTORY_SEPARATOR . 'v' . $version . '.php';
+$sidebar = file_exists($sidebarFile) ? require $sidebarFile : array();
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'index.php';
