@@ -60,10 +60,11 @@ if (file_exists($file)) {
 $title = $caption;
 if ($title) {
     $title .= ' - ';
-};
+}
 $title .= 'Русская документация Slim Framework';
 
 $sidebarFile = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'sidebar' . DIRECTORY_SEPARATOR . 'v' . $version . '.php';
+
 $sidebar = file_exists($sidebarFile) ? require $sidebarFile : array();
 
 $active = null;
