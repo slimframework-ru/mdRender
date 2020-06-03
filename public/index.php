@@ -50,7 +50,17 @@ if (file_exists($file)) {
     $head = substr($md, 0, $pos);
     $md = substr($md, $pos + 3);
     $caption = explode("title:", $head)[1];
+    // Жесткий хак on
+    // Когда не осилил Parsedown
+    $md = preg_replace('/([^`])`([^`]+)`([^`])/ui', '$1<code class="language-plaintext highlighter-rouge">$2</code>$3', $md);
+    // Жесткий хак off
+
     $content = $parser->parse($md);
+
+    // Жесткий хак on
+    // Когда не осилил Parsedown
+    $content = preg_replace('/<pre><code\s+class=\"language-([\w-]+)\">([^<]+)<\/code><\/pre>/ui', '<div class="language-$1 highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$2</code></pre></div></div>', $content);
+    // Жесткий хак off
 } else {
     $caption = 'Ошибка 404';
     $url = null;
