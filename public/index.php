@@ -1,5 +1,7 @@
-<?
-require_once "vendor/autoload.php";
+<?php
+
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+
 $Parsedown = new Parsedown();
 
 $title = '';
