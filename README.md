@@ -64,6 +64,12 @@
     }
     ```
 
+1. Добавить симлинк для изображений из `md`
+    ```bash
+    cd /path/to/project/public/assets/images
+    ln -s ../../../md/images md
+    ```
+
 1. Добавить файлы документации (в формате markdown) в директорию `/path/to/project/md/v{VER}`, где `{VER}` - номер версии фреймворка. Эти файлы можно взять из [репозитория](https://github.com/slimframework-ru/slim.ru)
 
 1. Оглавление редактируется в файлах `/path/to/project/sidebar/v{VER}.php`, где `{VER}` - номер версии фреймворка.
