@@ -9,6 +9,7 @@
  * @var string $url
  * @var string $current
  * @var array $sidebar
+ * @var array $googleAds
  * @var string|null $active
  * @var array|null $prev
  * @var array|null $next
@@ -35,38 +36,17 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <script src="https://use.typekit.net/yjz4fyo.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
-    <?php if (!empty($metrika)):?>
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript" >
-            (function (d, w, c) {
-                (w[c] = w[c] || []).push(function() {
-                    try {
-                        w.yaCounter<?=$metrika;?> = new Ya.Metrika({
-                            id:<?=$metrika;?>,
-                            clickmap:true,
-                            trackLinks:true,
-                            accurateTrackBounce:true,
-                            webvisor:true,
-                            trackHash:true
-                        });
-                    } catch(e) { }
-                });
+    <?php include __DIR__ . DIRECTORY_SEPARATOR . 'metrika.php'; ?>
 
-                var n = d.getElementsByTagName("script")[0],
-                    s = d.createElement("script"),
-                    f = function () { n.parentNode.insertBefore(s, n); };
-                s.type = "text/javascript";
-                s.async = true;
-                s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-                if (w.opera == "[object Opera]") {
-                    d.addEventListener("DOMContentLoaded", f, false);
-                } else { f(); }
-            })(document, window, "yandex_metrika_callbacks");
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/<?=$metrika;?>" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-        <!-- /Yandex.Metrika counter -->
-    <?php endif; ?>
+<?php if(!empty($googleAds['googleAdsShow']) && !empty($googleAds['googleAdsClient'])):?>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "<?=$googleAds['googleAdsClient'];?>",
+            enable_page_level_ads: true
+        });
+    </script>
+<?php endif; ?>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -116,6 +96,7 @@
             </div>
             <div class="col-md-8 docs-content">
                 <h1 class="page-header"><?=$caption?></h1>
+                <?php include __DIR__ . DIRECTORY_SEPARATOR . 'google-ads.php'; ?>
 <?php if($url):?>
                 <div class="edit-panel" style="margin: 0 0 1em 0;">
                     <a href="<?=$url;?>" target="_blank" class="btn btn-default btn-sm"><i class="fa fa-github"></i> редактировать страницу </a>
