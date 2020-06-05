@@ -28,6 +28,15 @@
         'metrika' => null, // Идентификатор Яндекс.Метрики
         'repository' => 'https://github.com/slimframework-ru/slim.ru', // Репозиторий с markdown-файлами документации. Необходим для ссылки "Редактировать страницу".
         'website' => 'http://slimframework.ru', // Адрес сайта. Необходим для микроразметки.
+        'ads' => array( // Рекламные площадки
+            'google' => array( // Google Ad
+                'show' => false, // Включить показ рекламы
+                'format' => '', // Формат (fluid)
+                'layout' => '', // Layout key
+                'client' => '', // Google Ad Client
+                'slot' => '',   // Слот
+            ),
+        ),
     );
     ```
 
