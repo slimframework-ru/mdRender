@@ -126,7 +126,7 @@
             <p>
                 Создано и поддерживается<br/>
                <a target="_blank" href="https://github.com/bad4iz">bad4iz</a>,
-                 <a target="_blank" href="https://github.com/ddrv">bad4iz</a> и
+                 <a target="_blank" href="https://github.com/ddrv">Ivan Dudarev</a> и
                 <a href="https://github.com/orgs/slimphp/people" target="_blank">командой Slim Framework</a>
             </p>
         </footer>
