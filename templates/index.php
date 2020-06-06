@@ -125,10 +125,8 @@
         <footer class="site-footer">
             <p>
                 Создано и поддерживается<br/>
-                <a href="http://joshlockhart.com">Josh Lockhart</a>,
-                <a href="https://www.donielsmith.com" target="_blank">Andrew Smith</a>,
-                <a href="http://akrabat.com/" target="_blank">Rob Allen</a>,
-                <a href="http://www.lgse.com/" target="_blank">Pierre Bérubé</a> и
+               <a target="_blank" href="https://github.com/bad4iz">bad4iz</a>,
+                 <a target="_blank" href="https://github.com/ddrv">bad4iz</a> и
                 <a href="https://github.com/orgs/slimphp/people" target="_blank">командой Slim Framework</a>
             </p>
         </footer>
