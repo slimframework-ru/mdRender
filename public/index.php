@@ -2,7 +2,7 @@
 
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
-$config = require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
+$config = (array)require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
 $metrika = 0;
 if (array_key_exists('metrika', $config) && !empty($config['metrika'])) {
@@ -17,6 +17,20 @@ if (array_key_exists('website', $config) && !empty($config['website'])) {
 $repository = 'https://github.com/slimframework-ru/slim.ru';
 if (array_key_exists('repository', $config) && !empty($config['repository'])) {
     $repository = (string)$config['repository'];
+}
+
+$googleAds = array();
+foreach (array('show', 'format', 'layout', 'client', 'slot') as $k) {
+    if (
+        array_key_exists('ads', $config)
+        && array_key_exists('google', $config['ads'])
+        && array_key_exists($k, $config['ads']['google'])
+    ) {
+        $v = $config['ads']['google'][$k];
+    } else {
+        $v = null;
+    }
+    $googleAds['googleAds' . ucfirst($k)] = $v;
 }
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
