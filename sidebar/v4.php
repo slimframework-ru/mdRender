@@ -21,11 +21,12 @@ return array(
     'Запрос' => array(
         '/v4/objects/request' => 'Обзор',
         '/v4/objects/request#the-request-method' => 'Метод запроса',
+        '/v4/objects/request#the-request-uri' => 'URI запроса',
         '/v4/objects/request#the-request-headers' => 'Заголовки запроса',
         '/v4/objects/request#the-request-body' => 'Тело запроса',
         '/v4/objects/request#uploaded-files' => 'Загруженные файлы',
-        '/v4/objects/request#request-helpers' => 'Помощьники',
-        '/v4/objects/request#route-object' => 'Обьект роутера',
+        '/v4/objects/request#request-helpers' => 'Помощники',
+        '/v4/objects/request#route-object' => 'Параметры маршрута',
     ),
     'Ответ' => array(
         '/v4/objects/response' => 'Обзор',
@@ -37,7 +38,7 @@ return array(
     'Маршрутизация' => array(
         '/v4/objects/routing' => 'Обзор',
         '/v4/objects/routing#how-to-create-routes' => 'Создание маршрутов',
-        '/v4/objects/routing#route-callbacks' => 'Коллбэк маршруты',
+        '/v4/objects/routing#route-callbacks' => 'Маршруты с обратным вызовом',
         '/v4/objects/routing#route-strategies' => 'Стратегии маршрутов',
         '/v4/objects/routing#route-placeholders' => 'Заполнители',
         '/v4/objects/routing#route-names' => 'Именованные маршруты',
@@ -50,13 +51,13 @@ return array(
         '/v4/middleware/routing' => 'Маршрутизация',
         '/v4/middleware/error-handling' => 'Обработка ошибок',
         '/v4/middleware/method-overriding' => 'Переопределение метода запроса',
-        '/v4/middleware/output-buffering' => 'Буфферизация вывода',
+        '/v4/middleware/output-buffering' => 'Буферизация вывода',
         '/v4/middleware/body-parsing' => 'Разбор тела запроса',
         '/v4/middleware/content-length' => 'Размер ответа',
     ),
-    'Cook book' => array(
+    'Рецепты' => array(
         '/v4/cookbook/route-patterns' => 'Завершающий слэш в URI',
-        '/v4/cookbook/retrieving-current-route' => 'Определение текущего роута',
+        '/v4/cookbook/retrieving-current-route' => 'Определение текущего маршрута',
         '/v4/cookbook/enable-cors' => 'Включение CORS',
         '/v4/cookbook/uploading-files' => 'Загрузка файлов с использованием форм POST',
     ),
